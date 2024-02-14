@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp3
+{
+    public partial class Form2 : Form
+    {
+        public Form2()
+        {
+            InitializeComponent();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            comboBox2.Items.Add("일남");
+            comboBox2.Items.Add("일녀");
+            comboBox2.Items.Add("이남");
+            comboBox2.Items.Add("이녀");
+            comboBox2.Items.Add("삼남");
+            comboBox2.Items.Add("심녀");
+            comboBox2.Items.Add("막내");
+            comboBox2.SelectedIndex = 0;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // 확인 버튼 
+            MessageBox.Show(textBox1.Text + "님은" + comboBox1.Text + "이고" + "\n" + "자녀중에" + comboBox2.Text + "입니다!");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // 종료 버튼 
+            Dispose();
+        }
+    }
+}
