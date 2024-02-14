@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp3
+{
+    public partial class Form3 : Form
+    {
+        public Form3()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // 등록 버튼 
+            listBox1.Items.Add(textBox1.Text);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // 제거 버튼
+            listBox1.Items.Remove(listBox1.Text);
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            listBox1.Items.Add("장동건");
+            listBox1.Items.Add("이동건");
+            listBox1.Items.Add("정우성");
+            listBox1.Items.Add("조인성");
+            listBox1.Items.Add("박보검");
+
+        }
+    }
+}
