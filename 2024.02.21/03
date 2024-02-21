@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp5
+{
+    public partial class Form3 : Form
+    {
+        public Form3()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // 짝수랑 홀수 
+
+            textBox2.Text = ""; // 홀수 값 
+            textBox3.Text = ""; // 짝수 값
+
+            int num = int.Parse(textBox1.Text);   // 입력 받을 정수 num
+            int num1 = 0; // 홀수의 합
+            int num2 = 0; // 짝수의 합 
+
+            for(int i = 0; i <= num; i++)
+            {
+                if(i % 2 == 0)    // 만약 i를 2로 나눴을 때 나머지가 0이면 (짝수) 
+                {
+                    num2 = num2 + i; // 짝수 합 
+                    textBox3.Text = textBox3.Text + i + "+";
+                }
+
+                else   // 홀수라면
+                {
+                    num1 = num1 + i;
+                    textBox2.Text = textBox2.Text + i + "+";
+                }
+            }
+
+            textBox2.Text = textBox2.Text.Trim('+', ' ') + "=" + num1;
+            textBox3.Text = textBox3.Text.Trim('+', ' ') + "=" + num2;
+
+        }
+    }
+}
