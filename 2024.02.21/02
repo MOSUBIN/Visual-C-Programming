@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp5
+{
+    public partial class Form2 : Form
+    {
+        public Form2()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // N부터 1까지의 합 
+
+            textBox2.Text = ""; // 입력 받을 text
+            int num = int.Parse(textBox1.Text);  // 입력한 정수 
+            int math = 0; // 전체 합계 변수 
+            
+            for(int i = num; i >=1; i--)
+            {
+                math = math + i;   // 전체 합계
+            
+                textBox2.Text = textBox2.Text + i + " + ";
+            }
+
+            textBox2.Text = math + "=" + textBox2.Text ;
+
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
