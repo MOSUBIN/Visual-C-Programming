@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Windows.Forms.Design;
+
+namespace WindowsFormsApp5
+{
+    public partial class Form5 : Form
+    {
+        public Form5()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = "";  //초기화
+            int num1 = int.Parse(textBox1.Text);   // 시작값
+            int num2 = int.Parse(textBox2.Text);   // 최종값 
+            int number1 = 0;   // 홀수 값
+         
+           
+            // 홀수 합 버튼 
+            for (int i = num1; i <= num2; i++)
+            {
+                if(i % 2 != 0 )  // 홀수 
+                {
+                    textBox3.Text = textBox3.Text + i + " + ";
+                    number1 = number1 + i;
+                }
+            }
+            textBox3.Text = textBox3.Text.Trim('+', ' ') + "=" + number1;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = "";  //초기화
+            int number2 = 0; // 짝수 값
+            // 짝수 합 버튼 
+            int num1 = int.Parse(textBox1.Text);   // 시작값
+            int num2 = int.Parse(textBox2.Text);   // 최종값 
+            // 홀수 합 버튼 
+            for (int i = num1; i <= num2; i++)
+            {
+                if (i % 2 == 0)  // 홀수 
+                {
+                    textBox3.Text = textBox3.Text + i + " + ";
+                    number2 = number2 + i;
+                }
+            }
+            textBox3.Text = textBox3.Text.Trim('+', ' ') + "=" + number2;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox3.Text = "";  //초기화
+            int number3 = 0; // 전체
+            // 전체 합 버튼 
+            int num1 = int.Parse(textBox1.Text);   // 시작값
+            int num2 = int.Parse(textBox2.Text);   // 최종값 
+            // 홀수 합 버튼 
+            for (int i = num1; i <= num2; i++)
+            {
+
+                textBox3.Text = textBox3.Text + i + " + ";
+                number3 = number3 + i;
+            }
+            textBox3.Text = textBox3.Text.Trim('+', ' ') + "=" + number3;
+        }
+        
+        private void Form5_Load(object sender, EventArgs e)
+        {
+            
+        }
+    }
+}
