@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp5
+{
+    public partial class Form4 : Form
+    {
+        public Form4()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            int num = int.Parse(textBox1.Text);   // 입력 받을 정수 
+            int num1 = 0;   // 나머지 0
+            int num2 = 0;   // 나머지 1
+            int num3 = 0;   // 나머지 2
+
+            textBox2.Text = ""; // 나머지 0 
+            textBox3.Text = ""; // 나머지 1
+            textBox4.Text = ""; // 나머지 2
+
+            for(int i = 0; i <= num; i++)
+            {
+                if(i % 3 == 0)  // 3으로 나누었을 때 나머지가 0
+                {
+                    num1 = num1 + i;
+                    textBox2.Text = textBox2.Text + i + "+";                     
+                }
+
+                else if(i % 3 == 1)  // 3으로 나누었을때 나머지가 1
+                {
+                    num2 = num2 + i;
+                    textBox3.Text = textBox3.Text + i + "+";
+                }
+
+                else if(i % 3 == 2)  // 3으로 나누었을때 나머지가 2
+                {
+                    num3 = num3 + i;
+                    textBox4.Text = textBox4.Text + i + "+";
+                }
+
+            }
+            textBox2.Text = textBox2.Text.Trim('+', ' ') + "=" + num1;
+            textBox3.Text = textBox3.Text.Trim('+', ' ') + "=" + num2;
+            textBox4.Text = textBox4.Text.Trim('+', ' ') + "=" + num3;
+        }
+    }
+}
